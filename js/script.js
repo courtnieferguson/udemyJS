@@ -1,3 +1,26 @@
+// // Get quote from api
+// async function getQuote() {
+//      const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+//   const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
+//   try {
+//     const response = await fetch(proxyUrl + apiUrl);
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     getQuote();
+//     console.log('whoops, no quote', error);
+//   }
+// }
+//
+// // On load
+// getQuote();
+
+
+
+
+
+
+
 const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
@@ -9,8 +32,7 @@ let apiQuotes = [];
 //Show new quote
 function newQuote() {
   //pick a random quote from apiQuotes array
-  const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)]
-  authorText.textContent = quote.author;
+  const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
   // Check if author is blank and replace with 'unknown'
   if (!quote.author) {
     authorText.textContent = 'Unknown';
@@ -45,7 +67,7 @@ function tweetQuote() {
 }
 
 // Event Listeners
-// newQuoteBtn.addEventListener('click', newQuote);
+newQuoteBtn.addEventListener('click', newQuote);
 twitterBtn.addEventListener('click', tweetQuote);
 
 //On Load
